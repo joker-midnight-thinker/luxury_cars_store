@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление предзаказа - Redline Motors</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Черный футер */
+        .divfooter {
+            background-color: #121212 !important;
+            color: #ffffff !important;
+        }
+
+        .divfooter a {
+            color: #a0a0a0 !important;
+        }
+
+        .divfooter a:hover {
+            color: #e63946 !important;
+        }
+
+        .divfooter-bottom p {
+            color: #666666 !important;
+        }
+
+        /* Базовые стили секции */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f9f9f9; /* Светлый фон сайта для контраста */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Легкая тень для всего блока */
+            overflow: hidden; /* Чтобы углы карточек не вылезали */
+        }
+
+        /* Левая колонка - Форма */
+        .contact-form-container {
+            flex: 1.2;
+            min-width: 300px;
+            padding: 50px;
+        }
+
+        .contact-form-container h2 {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .contact-form-container > p {
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 16px;
+            background-color: #f5f7fa;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            transition: border 0.3s ease;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 14px;
+            cursor: pointer;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border: 1px solid #e63946;
+            background-color: #ffffff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            background-color: #e63946; /* Фирменный красный */
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background-color: #c92a38;
+        }
+        
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Правая колонка - Цельная темная карточка */
+        .contact-info-container {
+            flex: 0.8;
+            min-width: 300px;
+            background-color: #1a1a1a; /* Темный премиальный фон */
+            color: #ffffff;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-container h3 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия разделителя */
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-icon {
+            color: #e63946; /* Красные акцентные иконки */
+            font-size: 24px;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .info-text h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-text p {
+            margin: 0;
+            color: #a0a0a0; /* Светло-серый читаемый текст */
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 850px) {
+            .contact-section {
+                flex-direction: column;
+                margin: 20px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .contact-info-container {
+                padding: 40px 30px;
+            }
+            .contact-form-container {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav class="navbar light-bg">
+        <a href="index.html" class="logo"><span>Redline</span> Motors</a>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="catalog/catalog.html" class="dropbtn">Каталог авто <span class="arrow-down">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="catalog/catalog.html#aston_martin">Aston Martin</a></li>
+              <li><a href="catalog/catalog.html#bugatti">Bugatti</a></li>
+              <li><a href="catalog/catalog.html#ferrari">Ferrari</a></li>
+              <li><a href="catalog/catalog.html#lamborghini">Lamborghini</a></li>
+              <li><a href="catalog/catalog.html#maserati">Maserati</a></li>
+              <li><a href="catalog/catalog.html#porsche">Porsche</a></li>
+            </ul>
+          </li>
+          <li><a href="contacts.html">Обратная связь</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <div style="max-width: 1200px; margin: 120px auto -40px auto; padding: 0 20px;">
+        <a href="catalog/catalog.html" id="back-link" style="color: #e63946; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-family: 'Segoe UI', sans-serif; transition: color 0.2s;" onmouseover="this.style.color='#c92a38'" onmouseout="this.style.color='#e63946'">
+            ← Назад в каталог
+        </a>
+    </div>
+
+    <section class="contact-section">
+        <div class="contact-form-container">
+            <h2>Оформить предзаказ</h2>
+            <p>Заполните форму ниже, чтобы зарезервировать спорткар. Наш менеджер свяжется с вами для подтверждения конфигурации и деталей поставки.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="car-select" required>
+                            <option value="" disabled selected>Выберите модель автомобиля *</option>
+                            <optgroup label="Aston Martin">
+                                <option value="aston_martin_valkyrie_1">Aston Martin Valkyrie #1</option>
+                                <option value="aston_martin_valkyrie_2">Aston Martin Valkyrie #2</option>
+                                <option value="aston_martin_valkyrie_3">Aston Martin Valkyrie #3</option>
+                                <option value="aston_martin_valkyrie_4">Aston Martin Valkyrie #4</option>
+                                <option value="aston_martin_valkyrie_5">Aston Martin Valkyrie #5</option>
+                                <option value="aston_martin_valkyrie_6">Aston Martin Valkyrie #6</option>
+                            </optgroup>
+                            <optgroup label="Bugatti">
+                                <option value="bugatti_chiron_1">Bugatti Chiron #1</option>
+                                <option value="bugatti_chiron_2">Bugatti Chiron #2</option>
+                                <option value="bugatti_chiron_3">Bugatti Chiron #3</option>
+                                <option value="bugatti_chiron_4">Bugatti Chiron #4</option>
+                                <option value="bugatti_chiron_5">Bugatti Chiron #5</option>
+                                <option value="bugatti_chiron_6">Bugatti Chiron #6</option>
+                            </optgroup>
+                            <optgroup label="Ferrari">
+                                <option value="ferrari_sf90_1">Ferrari SF90 #1</option>
+                                <option value="ferrari_sf90_2">Ferrari SF90 #2</option>
+                                <option value="ferrari_sf90_3">Ferrari SF90 #3</option>
+                                <option value="ferrari_sf90_4">Ferrari SF90 #4</option>
+                                <option value="ferrari_sf90_5">Ferrari SF90 #5</option>
+                                <option value="ferrari_sf90_6">Ferrari SF90 #6</option>
+                            </optgroup>
+                            <optgroup label="Lamborghini">
+                                <option value="lamborghini_revuelto_1">Lamborghini Revuelto #1</option>
+                                <option value="lamborghini_revuelto_2">Lamborghini Revuelto #2</option>
+                                <option value="lamborghini_revuelto_3">Lamborghini Revuelto #3</option>
+                                <option value="lamborghini_revuelto_4">Lamborghini Revuelto #4</option>
+                                <option value="lamborghini_revuelto_5">Lamborghini Revuelto #5</option>
+                                <option value="lamborghini_revuelto_6">Lamborghini Revuelto #6</option>
+                            </optgroup>
+                            <optgroup label="Maserati">
+                                <option value="maserati_mc20_1">Maserati MC20 #1</option>
+                                <option value="maserati_mc20_2">Maserati MC20 #2</option>
+                                <option value="maserati_mc20_3">Maserati MC20 #3</option>
+                                <option value="maserati_mc20_4">Maserati MC20 #4</option>
+                                <option value="maserati_mc20_5">Maserati MC20 #5</option>
+                                <option value="maserati_mc20_6">Maserati MC20 #6</option>
+                            </optgroup>
+                            <optgroup label="Porsche">
+                                <option value="porsche_911_1">Porsche 911 #1</option>
+                                <option value="porsche_911_2">Porsche 911 #2</option>
+                                <option value="porsche_911_3">Porsche 911 #3</option>
+                                <option value="porsche_911_4">Porsche 911 #4</option>
+                                <option value="porsche_911_5">Porsche 911 #5</option>
+                                <option value="porsche_911_6">Porsche 911 #6</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон *" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Желаемый цвет кузова">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <textarea placeholder="Пожелания по комплектации, цвету кузова, дополнительным опциям..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Подтвердить предзаказ</button>
+            </form>
+        </div>
+
+        <div class="contact-info-container">
+            <h3>Условия предзаказа</h3>
+            
+            <div class="info-item">
+                <div class="info-icon">💎</div>
+                <div class="info-text">
+                    <h4>Индивидуальный подход</h4>
+                    <p>Выбор эксклюзивных материалов отделки салона и цвета кузова непосредственно на заводе-изготовителе.</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">🛡️</div>
+                <div class="info-text">
+                    <h4>Гарантия и Юр. чистота</h4>
+                    <p>Все автомобили поставляются с официальной гарантией и полным пакетом документов для регистрации.</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">✈️</div>
+                <div class="info-text">
+                    <h4>Быстрая доставка</h4>
+                    <p>Авиадоставка гиперкаров из Европы и Азии в течение 14-30 дней с момента подтверждения заказа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divfooter">
+      <div class="divfooter-nav-row">
+        <a href="catalog/catalog.html">Каталог</a>
+        <a href="contacts.html">Обратная связь</a>
+      </div>
+      <div class="divfooter-socials">
+        <a href="#" target="_blank">
+          <img src="assets/vk.png" alt="VK" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="assets/tg.png" alt="Telegram" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="assets/youtube.png" alt="YouTube" />
+        </a>
+      </div>
+      <div class="divfooter-bottom">
+        <p>© 2026 Redline Motors. Все права защищены.</p>
+      </div>
+    </div>
+
+    <script>
+      // Меню-бургер
+      var burger = document.querySelector(".burger");
+      var nav = document.querySelector(".nav-links");
+      if (burger && nav) {
+        burger.addEventListener("click", function () {
+          nav.classList.toggle("nav-active");
+        });
+      }
+
+      // Автоматическое заполнение модели из GET-параметра URL
+      document.addEventListener("DOMContentLoaded", function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        var carParam = urlParams.get("car");
+        if (carParam) {
+          var selectElement = document.getElementById("car-select");
+          if (selectElement) {
+            selectElement.value = carParam;
+          }
+          
+          // Обновляем ссылку "Назад" на саму карточку машины, если пришли с неё
+          var backLink = document.getElementById("back-link");
+          if (backLink) {
+            var parts = carParam.split("_");
+            if (parts.length >= 2) {
+              var brand = parts[0] + (parts[1] === "martin" ? "_martin" : "");
+              var carNum = parts[parts.length - 1];
+              backLink.href = "card/" + brand + "/car" + carNum + ".html";
+            }
+          }
+        }
+      });
+    </script>
+</body>
+</html>

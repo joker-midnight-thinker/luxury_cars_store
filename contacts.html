@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь - Redline Motors</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Черный футер */
+        .divfooter {
+            background-color: #121212 !important;
+            color: #ffffff !important;
+        }
+
+        .divfooter a {
+            color: #a0a0a0 !important;
+        }
+
+        .divfooter a:hover {
+            color: #e63946 !important;
+        }
+
+        .divfooter-bottom p {
+            color: #666666 !important;
+        }
+
+        /* Базовые стили секции */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f9f9f9; /* Светлый фон сайта для контраста */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Легкая тень для всего блока */
+            overflow: hidden; /* Чтобы углы карточек не вылезали */
+        }
+
+        /* Левая колонка - Форма */
+        .contact-form-container {
+            flex: 1.2;
+            min-width: 300px;
+            padding: 50px;
+        }
+
+        .contact-form-container h2 {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .contact-form-container > p {
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            background-color: #f5f7fa;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border: 1px solid #e63946;
+            background-color: #ffffff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            background-color: #e63946; /* Фирменный красный */
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background-color: #c92a38;
+        }
+        
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Правая колонка - Цельная темная карточка */
+        .contact-info-container {
+            flex: 0.8;
+            min-width: 300px;
+            background-color: #1a1a1a; /* Темный премиальный фон */
+            color: #ffffff;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-container h3 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия разделителя */
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-icon {
+            color: #e63946; /* Красные акцентные иконки */
+            font-size: 24px;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .info-text h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-text p {
+            margin: 0;
+            color: #a0a0a0; /* Светло-серый читаемый текст */
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 850px) {
+            .contact-section {
+                flex-direction: column;
+                margin: 20px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .contact-info-container {
+                padding: 40px 30px;
+            }
+            .contact-form-container {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav class="navbar light-bg">
+        <a href="index.html" class="logo"><span>Redline</span> Motors</a>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="catalog/catalog.html" class="dropbtn">Каталог авто <span class="arrow-down">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="catalog/catalog.html#aston_martin">Aston Martin</a></li>
+              <li><a href="catalog/catalog.html#bugatti">Bugatti</a></li>
+              <li><a href="catalog/catalog.html#ferrari">Ferrari</a></li>
+              <li><a href="catalog/catalog.html#lamborghini">Lamborghini</a></li>
+              <li><a href="catalog/catalog.html#maserati">Maserati</a></li>
+              <li><a href="catalog/catalog.html#porsche">Porsche</a></li>
+            </ul>
+          </li>
+          <li><a href="contacts.html">Обратная связь</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <div style="max-width: 1200px; margin: 120px auto -40px auto; padding: 0 20px;">
+        <a href="index.html" style="color: #e63946; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-family: 'Segoe UI', sans-serif; transition: color 0.2s;" onmouseover="this.style.color='#c92a38'" onmouseout="this.style.color='#e63946'">
+            ← Назад на главную
+        </a>
+    </div>
+
+    <section class="contact-section">
+        <div class="contact-form-container">
+            <h2>Оставить заявку</h2>
+            <p>Заполните форму ниже, и наши менеджеры свяжутся с вами в течение 15 минут для уточнения деталей.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон *" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <textarea placeholder="Ваши пожелания или вопрос..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+
+        <div class="contact-info-container">
+            <h3>Контактная информация</h3>
+            
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-text">
+                    <h4>Телефон</h4>
+                    <p>+7 (495) 999-00-00<br>Пн-Вс: 10:00 - 22:00</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-text">
+                    <h4>Почта</h4>
+                    <p>vip@automotors.ru<br>Отвечаем круглосуточно</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-text">
+                    <h4>Шоурум</h4>
+                    <p>г. Москва, Пресненская наб., 12<br>Башня Федерация, 1 этаж</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divfooter" style="margin-top: 80px !important;">
+      <div class="divfooter-nav-row">
+        <a href="catalog/catalog.html">Каталог</a>
+        <a href="contacts.html">Обратная связь</a>
+      </div>
+      <div class="divfooter-socials">
+        <a href="#" target="_blank">
+          <img src="./assets/vk.png" alt="VK" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="./assets/tg.png" alt="Telegram" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="./assets/youtube.png" alt="YouTube" />
+        </a>
+      </div>
+      <div class="divfooter-bottom">
+        <p>© 2026 Redline Motors. Все права защищены.</p>
+      </div>
+    </div>
+
+    <script>
+        var burger = document.querySelector(".burger");
+        var nav = document.querySelector(".nav-links");
+        if (burger && nav) {
+          burger.addEventListener("click", function () {
+            nav.classList.toggle("nav-active");
+          });
+        }
+    </script>
+</body>
+</html>

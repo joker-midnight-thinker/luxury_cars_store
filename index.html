@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/slide.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap" />
+</head>
+
+<body>
+  <div class="w-light">
+    <main class="div-nuxt">
+      <section class="divdefault">
+        <div class="before"></div>
+        <header>
+          <nav class="navbar no-mobile-menu">
+            <a href="index.html" class="logo"><span>Redline</span> Motors</a>
+            <ul class="nav-links">
+              <li class="dropdown">
+                <a href="catalog/catalog.html" class="dropbtn">Каталог авто <span class="arrow-down">▼</span></a>
+                <ul class="dropdown-content">
+                  <li><a href="catalog/catalog.html#aston_martin">Aston Martin</a></li>
+                  <li><a href="catalog/catalog.html#bugatti">Bugatti</a></li>
+                  <li><a href="catalog/catalog.html#ferrari">Ferrari</a></li>
+                  <li><a href="catalog/catalog.html#lamborghini">Lamborghini</a></li>
+                  <li><a href="catalog/catalog.html#maserati">Maserati</a></li>
+                  <li><a href="catalog/catalog.html#porsche">Porsche</a></li>
+                </ul>
+              </li>
+              <li><a href="contacts.html">Обратная связь</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main class="divdefault-contentmargin">
+          <div class="divdefault-content">
+            <div class="main">
+              <div class="divview-container">
+                <div class="slider">
+                  <input name="carousel-control" id="carousel-page1" type="radio" checked />
+                  <input name="carousel-control" id="carousel-page2" type="radio" />
+                  <input name="carousel-control" id="carousel-page3" type="radio" />
+                  <input name="carousel-control" id="carousel-page4" type="radio" />
+                  <input name="carousel-control" id="carousel-page5" type="radio" />
+                  <div class="slider--el slider--el-1 anim-4parts">
+                    <div class="slider--el-bg">
+                      <div class="part top left"></div>
+                      <div class="part top right"></div>
+                      <div class="part bot left"></div>
+                      <div class="part bot right"></div>
+                    </div>
+                  </div>
+                  <div class="slider--el slider--el-2 anim-9parts">
+                    <div class="slider--el-bg">
+                      <div class="part left-top"></div>
+                      <div class="part mid-top"></div>
+                      <div class="part right-top"></div>
+                      <div class="part left-mid"></div>
+                      <div class="part mid-mid"></div>
+                      <div class="part right-mid"></div>
+                      <div class="part left-bot"></div>
+                      <div class="part mid-bot"></div>
+                      <div class="part right-bot"></div>
+                    </div>
+                  </div>
+                  <div class="slider--el slider--el-3 anim-5parts">
+                    <div class="slider--el-bg">
+                      <div class="part part-1"></div>
+                      <div class="part part-2"></div>
+                      <div class="part part-3"></div>
+                      <div class="part part-4"></div>
+                      <div class="part part-5"></div>
+                    </div>
+                  </div>
+                  <div class="slider--el slider--el-4 anim-3parts">
+                    <div class="slider--el-bg">
+                      <div class="part left"></div>
+                      <div class="part mid"></div>
+                      <div class="part right"></div>
+                    </div>
+                  </div>
+                  <div class="slider--el slider--el-5 anim-4parts">
+                    <div class="slider--el-bg">
+                      <div class="part top left"></div>
+                      <div class="part top right"></div>
+                      <div class="part bot left"></div>
+                      <div class="part bot right"></div>
+                    </div>
+                  </div>
+                  <div class="slider--control left">
+                    <label class="carousel-page1-left" for="carousel-page1"></label>
+                    <label class="carousel-page2-left" for="carousel-page2"></label>
+                    <label class="carousel-page3-left" for="carousel-page3"></label>
+                    <label class="carousel-page4-left" for="carousel-page4"></label>
+                    <label class="carousel-page5-left" for="carousel-page5"></label>
+                  </div>
+                  <div class="slider--control right">
+                    <label class="carousel-page1-right" for="carousel-page1"></label>
+                    <label class="carousel-page2-right" for="carousel-page2"></label>
+                    <label class="carousel-page3-right" for="carousel-page3"></label>
+                    <label class="carousel-page4-right" for="carousel-page4"></label>
+                    <label class="carousel-page5-right" for="carousel-page5"></label>
+                  </div>
+                </div>
+
+                <section class="sectionbrands" style="gap: 24px;">
+                  <div class="headermain-section-head" style="justify-content: center; width: 100%;">
+                    <h2 class="section-title">Модели в наличии</h2>
+                  </div>
+                  <div class="divbrands">
+                    <div class="divbrands-wrapperalign-stre">
+                      <div class="divbrands-wrapper">
+                        <div class="divbrands-list">
+                          <div class="abrands-item" id="abrandsItemContainer">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Aston Martin"
+                              src="./assets/aston_martin.jpg" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#aston_martin">Aston Martin</a>
+                            </div>
+                          </div>
+
+                          <div class="abrands-item2" id="abrandsItemContainer1">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Bugatti" src="./assets/buggati.jpg" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#bugatti">Bugatti</a>
+                            </div>
+                          </div>
+
+                          <div class="abrands-item3" id="abrandsItemContainer2">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Ferrari" src="./assets/ferrari.jpg" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#ferrari">Ferrari</a>
+                            </div>
+                          </div>
+
+                          <div class="abrands-item4" id="abrandsItemContainer3">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Lamborghini"
+                              src="./assets/logo_lamba.png" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#lamborghini">Lamborghini</a>
+                            </div>
+                          </div>
+
+                          <div class="abrands-item5" id="abrandsItemContainer4">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Maserati" src="./assets/mazerati.jpg" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#maserati">Maserati</a>
+                            </div>
+                          </div>
+
+                          <div class="abrands-item6" id="abrandsItemContainer5">
+                            <img class="alfa-romeo-icon" loading="lazy" alt="Porsche" src="./assets/porche.jpg" />
+                            <div class="pbrands-item-name">
+                              <a class="alfa-romeo" href="catalog.html#porsche">Porsche</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div class="sectionmain-section">
+                  <div class="headermain-section-head">
+                    <h1 class="section-title">Салоны на карте</h1>
+                  </div>
+                  <div class="divsalons-map-container" style="border: none !important;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A0%D0%9E%D0%9B%D0%AC%D0%A4%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&z=10" width="100%" height="480" frameborder="0" allowfullscreen="true" style="border: 0; display: block; border-radius: var(--br-25); overflow: hidden;"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <div class="divfooter">
+          <div class="divfooter-nav-row">
+            <a href="catalog/catalog.html">Каталог</a>
+            <a href="contacts.html">Обратная связь</a>
+          </div>
+          <div class="divfooter-socials">
+            <a href="#" target="_blank">
+              <img src="./assets/vk.png" alt="VK" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="./assets/tg.png" alt="Telegram" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="./assets/youtube.png" alt="YouTube" />
+            </a>
+          </div>
+          <div class="divfooter-bottom">
+            <p>© 2026 Redline Motors. Все права защищены.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Swipe gestures for carousel on mobile
+    var slider = document.querySelector(".slider");
+    if (slider) {
+      var touchStartX = 0;
+      var touchEndX = 0;
+      
+      slider.addEventListener("touchstart", function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      slider.addEventListener("touchend", function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+      
+      function handleSwipe() {
+        var swipeDistance = touchEndX - touchStartX;
+        var threshold = 50; // minimum distance to be considered a swipe
+        
+        if (Math.abs(swipeDistance) > threshold) {
+          // Find currently checked radio button
+          var radios = Array.from(document.querySelectorAll('input[name="carousel-control"]'));
+          var checkedIndex = radios.findIndex(r => r.checked);
+          
+          if (checkedIndex !== -1) {
+            if (swipeDistance < 0) {
+              // Swiped left -> Next slide
+              var nextIndex = (checkedIndex + 1) % radios.length;
+              radios[nextIndex].checked = true;
+            } else {
+              // Swiped right -> Previous slide
+              var prevIndex = (checkedIndex - 1 + radios.length) % radios.length;
+              radios[prevIndex].checked = true;
+            }
+          }
+        }
+      }
+    }
+
+    var abrandsItemContainer = document.getElementById("abrandsItemContainer");
+    if (abrandsItemContainer) {
+      abrandsItemContainer.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#aston_martin";
+      });
+    }
+
+    var abrandsItemContainer1 = document.getElementById("abrandsItemContainer1");
+    if (abrandsItemContainer1) {
+      abrandsItemContainer1.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#bugatti";
+      });
+    }
+
+    var abrandsItemContainer2 = document.getElementById("abrandsItemContainer2");
+    if (abrandsItemContainer2) {
+      abrandsItemContainer2.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#ferrari";
+      });
+    }
+
+    var abrandsItemContainer3 = document.getElementById("abrandsItemContainer3");
+    if (abrandsItemContainer3) {
+      abrandsItemContainer3.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#lamborghini";
+      });
+    }
+
+    var abrandsItemContainer4 = document.getElementById("abrandsItemContainer4");
+    if (abrandsItemContainer4) {
+      abrandsItemContainer4.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#maserati";
+      });
+    }
+
+    var abrandsItemContainer5 = document.getElementById("abrandsItemContainer5");
+    if (abrandsItemContainer5) {
+      abrandsItemContainer5.addEventListener("click", function () {
+        window.location.href = "catalog/catalog.html#porsche";
+      });
+    }
+
+    var aymaps3MapCopyrightsLogoContainer = document.getElementById(
+      "aymaps3MapCopyrightsLogoContainer"
+    );
+    if (aymaps3MapCopyrightsLogoContainer) {
+      aymaps3MapCopyrightsLogoContainer.addEventListener("click", function () {
+        window.open("https://yandex.ru/maps/");
+      });
+    }
+
+    var apromoBannerImage = document.getElementById("apromoBannerImage");
+    if (apromoBannerImage) {
+      apromoBannerImage.addEventListener("click", function () {
+        window.open("https://www.rolf.ru/mobile-app/");
+      });
+    }
+
+    var component1Icon = document.getElementById("component1Icon");
+    if (component1Icon) {
+      component1Icon.addEventListener("click", function () {
+        window.open("https://itunes.apple.com/app/apple-store/id1407250313");
+      });
+    }
+
+    var component1Icon1 = document.getElementById("component1Icon1");
+    if (component1Icon1) {
+      component1Icon1.addEventListener("click", function () {
+        window.open("https://play.google.com/store/apps/details");
+      });
+    }
+
+    var component1Icon2 = document.getElementById("component1Icon2");
+    if (component1Icon2) {
+      component1Icon2.addEventListener("click", function () {
+        window.open("https://appgallery.huawei.com/app/C105848481");
+      });
+    }
+
+    var component1Icon3 = document.getElementById("component1Icon3");
+    if (component1Icon3) {
+      component1Icon3.addEventListener("click", function () {
+        window.open("https://global.app.mi.com/details");
+      });
+    }
+
+    var component1Icon4 = document.getElementById("component1Icon4");
+    if (component1Icon4) {
+      component1Icon4.addEventListener("click", function () {
+        window.open("https://appgallery.huawei.com/app/C105848481");
+      });
+    }
+
+    var component1Icon5 = document.getElementById("component1Icon5");
+    if (component1Icon5) {
+      component1Icon5.addEventListener("click", function () {
+        window.open("https://www.rustore.ru/catalog/app/ru.rolf.rolf");
+      });
+    }
+
+    var afooterSocialLinksItemIcon = document.getElementById(
+      "afooterSocialLinksItemIcon"
+    );
+    if (afooterSocialLinksItemIcon) {
+      afooterSocialLinksItemIcon.addEventListener("click", function () {
+        window.open("#");
+      });
+    }
+
+    var afooterSocialLinksItemIcon1 = document.getElementById(
+      "afooterSocialLinksItemIcon1"
+    );
+    if (afooterSocialLinksItemIcon1) {
+      afooterSocialLinksItemIcon1.addEventListener("click", function () {
+        window.open("#");
+      });
+    }
+
+    var afooterSocialLinksItemIcon2 = document.getElementById(
+      "afooterSocialLinksItemIcon2"
+    );
+    if (afooterSocialLinksItemIcon2) {
+      afooterSocialLinksItemIcon2.addEventListener("click", function () {
+        window.open("#");
+      });
+    }
+
+    var afooterSocialLinksItemIcon3 = document.getElementById(
+      "afooterSocialLinksItemIcon3"
+    );
+    if (afooterSocialLinksItemIcon3) {
+      afooterSocialLinksItemIcon3.addEventListener("click", function () {
+        window.open("https://zen.yandex.ru/rolfcompany");
+      });
+    }
+
+    var afooterSocialLinksItemIcon4 = document.getElementById(
+      "afooterSocialLinksItemIcon4"
+    );
+    if (afooterSocialLinksItemIcon4) {
+      afooterSocialLinksItemIcon4.addEventListener("click", function () {
+        window.open("https://max.ru/rolf_company");
+      });
+    }
+  </script>
+</body>
+
+</html>

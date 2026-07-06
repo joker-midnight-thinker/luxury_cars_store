@@ -1,0 +1,104 @@
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  line-height: normal;
+}
+
+.divfooter {
+  margin-top: auto !important;
+}
+  
+  :root {
+    /* Common Style Variables */
+  
+    /* Color */
+    --color-gainsboro: #e6e6e6;
+    --wwwrolfru-Black: #000;
+    --wwwrolfru-Black-Squeeze: #ecf3f8;
+    --wwwrolfru-Dove-Gray: #656565;
+    --wwwrolfru-Gray: #929292;
+    --wwwrolfru-Mine-Shaft: #222;
+    --wwwrolfru-Mine-Shaft-95: rgba(37, 37, 37, 0.95);
+    --wwwrolfru-White: #fff;
+    --wwwrolfru-White-75: rgba(255, 255, 255, 0.75);
+  
+    /* Gap */
+    --gap-4: 4px;
+    --gap-8: 8px;
+    --gap-16: 16px;
+    --gap-20: 20px;
+    --gap-24: 24px;
+    --gap-28: 28px;
+    --gap-32: 32px;
+  
+    /* Padding */
+    --padding-0: 0px;
+    --padding-01: 0;
+    --padding-2: 2px;
+    --padding-4: 4px;
+    --padding-6: 6px;
+    --padding-8: 8px;
+    --padding-15: 15px;
+    --padding-16: 16px;
+    --padding-28: 28px;
+    --padding-32: 32px;
+  
+    /* BorderRadius */
+    --br-8: 8px;
+    --br-10: 10px;
+    --br-25: 25px;
+  
+    /* Font */
+    --font-inter: Inter, Arial, sans-serif;
+    --font-unbounded: Unbounded, Arial, sans-serif;
+  
+    /* FontSize */
+    --fs-11: 11px;
+    --fs-14: 14px;
+    --fs-16: 16px;
+  
+    /* Shadows */
+    --shadow-drop: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  
+    /* WidthHeights */
+    --height-14: 14px;
+    --height-20: 20px;
+    --height-24: 24px;
+    --height-36: 36px;
+    --height-40: 40px;
+    --height-46: 46px;
+    --height-58: 58px;
+    --height-80: 80px;
+    --height-256: 256px;
+    --max-h-58: 58px;
+    --max-w-132: 132px;
+    --max-w-224: 224px;
+    --width-14: 14px;
+    --width-24: 24px;
+    --width-36: 36px;
+    --width-40: 40px;
+    --width-46: 46px;
+    --width-132: 132px;
+    --width-256: 256px;
+    --width-calc100-1173_3: calc(100% - 1173.3px);
+  
+    /* LineHeights */
+    --lh-14: 14px;
+    --lh-20: 20px;
+    --lh-24: 24px;
+  
+    --left-0: 0px;
+    --left-12: 12px;
+    --top-0: 0px;
+    --top-108: 108px;
+    --top--2: -2px;
+  }
+  
