@@ -1,0 +1,69 @@
+/* Стили для премиальных Toast-уведомлений */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast {
+    min-width: 300px;
+    max-width: 450px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15), opacity 0.4s ease;
+    opacity: 0;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-success {
+    border-left: 4px solid #2ec4b6;
+    box-shadow: 0 10px 30px rgba(46, 196, 182, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.toast-error {
+    border-left: 4px solid #e63946;
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.toast-info {
+    border-left: 4px solid #3a86c8;
+    box-shadow: 0 10px 30px rgba(58, 134, 200, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.toast-close:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}

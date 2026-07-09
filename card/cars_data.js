@@ -426,3 +426,41 @@ const carsData = {
     }
   }
 };
+
+// Автоматическое обновление данных с API бэкенда при его наличии
+window.carsDataPromise = (async function() {
+    try {
+        const response = await fetch('http://localhost:8000/api/cars');
+        if (!response.ok) throw new Error('API response not ok');
+        const dbCars = await response.json();
+        
+        if (dbCars && dbCars.length > 0) {
+            // Очищаем локальные данные, чтобы заменить их актуальными из БД
+            for (const key in carsData) {
+                delete carsData[key];
+            }
+            
+            // Наполняем carsData заново
+            dbCars.forEach(car => {
+                const brand = car.brand;
+                if (!carsData[brand]) {
+                    carsData[brand] = {};
+                }
+                const index = Object.keys(carsData[brand]).length + 1;
+                const carKey = `car${index}`;
+                
+                carsData[brand][carKey] = {
+                    title: car.title,
+                    price: car.price,
+                    preorderUrl: car.preorder_url || `../preorder.html?car=${car.car_id}`,
+                    images: car.images,
+                    specs: car.specs
+                };
+            });
+            console.log("[API] Данные автомобилей успешно обновлены из БД.");
+        }
+    } catch (e) {
+        console.warn("[API] Не удалось загрузить автомобили из бэкенда, используется локальный fallback:", e);
+    }
+})();
+

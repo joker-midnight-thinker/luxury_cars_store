@@ -779,7 +779,10 @@
     let originalCardsOrder = [];
     
     // Сохраняем исходный порядок карточек после загрузки DOM
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
+      if (window.carsDataPromise) {
+        await window.carsDataPromise;
+      }
       renderCatalogFromData();
       originalCardsOrder = Array.from(document.querySelectorAll('.car-card'));
       

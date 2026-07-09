@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/api-client.js"></script>
+    <script src="js/toast.js"></script>
     <style>
         /* Черный футер */
         .divfooter {
@@ -295,7 +297,7 @@
             <h2>Оформить предзаказ</h2>
             <p>Заполните форму ниже, чтобы зарезервировать спорткар. Наш менеджер свяжется с вами для подтверждения конфигурации и деталей поставки.</p>
             
-            <form action="#" method="POST">
+            <form id="preorder-form" action="#" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <select id="car-select" required>
@@ -324,22 +326,22 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Ваше имя *" required>
+                        <input type="text" id="customer_name" placeholder="Ваше имя *" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Телефон *" required>
+                        <input type="tel" id="customer_phone" placeholder="Телефон *" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="customer_email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Желаемый цвет кузова">
+                        <input type="text" id="color" placeholder="Желаемый цвет кузова">
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 25px;">
-                    <textarea placeholder="Пожелания по комплектации, цвету кузова, дополнительным опциям..."></textarea>
+                    <textarea id="comments" placeholder="Пожелания по комплектации, цвету кузова, дополнительным опциям..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Подтвердить предзаказ</button>
             </form>
@@ -436,6 +438,53 @@
           }
         }
       });
+
+      // Обработка отправки формы предзаказа
+      var preorderForm = document.getElementById('preorder-form');
+      if (preorderForm) {
+        preorderForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          var customer_name = document.getElementById('customer_name').value.trim();
+          var customer_phone = document.getElementById('customer_phone').value.trim();
+          var customer_email = document.getElementById('customer_email').value.trim();
+          var car_select = document.getElementById('car-select');
+          var car_model = car_select.options[car_select.selectedIndex].text;
+          var color = document.getElementById('color').value.trim();
+          var comments = document.getElementById('comments').value.trim();
+          
+          var payload = {
+            customer_name: customer_name,
+            customer_phone: customer_phone,
+            customer_email: customer_email || null,
+            car_model: car_model,
+            color: color || null,
+            comments: comments || null
+          };
+          
+          try {
+            var response = await apiRequest('/api/orders', {
+              method: 'POST',
+              body: JSON.stringify(payload)
+            });
+            
+            if (response.ok) {
+              showToast('Предзаказ успешно оформлен! Наш менеджер скоро свяжется с вами.', 'success');
+              preorderForm.reset();
+            } else {
+              var errData = await response.json();
+              var errMsg = errData.detail;
+              if (Array.isArray(errMsg)) {
+                errMsg = errMsg.map(e => e.msg).join(', ');
+              }
+              showToast(errMsg || 'Не удалось отправить предзаказ.', 'error');
+            }
+          } catch (err) {
+            console.error(err);
+            showToast('Ошибка при отправке предзаказа. Убедитесь, что сервер запущен.', 'error');
+          }
+        });
+      }
     </script>
 </body>
 </html>

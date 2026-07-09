@@ -941,12 +941,18 @@
       setActiveImage(0);
     }
 
-    var carRecord = getCarRecord();
-    if (!carRecord) {
-      renderNotFound();
-    } else {
-      renderCar(carRecord);
+    async function initPage() {
+      if (window.carsDataPromise) {
+        await window.carsDataPromise;
+      }
+      var carRecord = getCarRecord();
+      if (!carRecord) {
+        renderNotFound();
+      } else {
+        renderCar(carRecord);
+      }
     }
+    initPage();
   </script>
 </body>
 </html>

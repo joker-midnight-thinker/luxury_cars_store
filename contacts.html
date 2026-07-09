@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/api-client.js"></script>
+    <script src="js/toast.js"></script>
     <style>
         /* Черный футер */
         .divfooter {
@@ -286,22 +288,22 @@
             <h2>Оставить заявку</h2>
             <p>Заполните форму ниже, и наши менеджеры свяжутся с вами в течение 15 минут для уточнения деталей.</p>
             
-            <form action="#" method="POST">
+            <form id="feedback-form" action="#" method="POST">
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Ваше имя *" required>
+                        <input type="text" id="feedback_name" placeholder="Ваше имя *" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Телефон *" required>
+                        <input type="tel" id="feedback_phone" placeholder="Телефон *" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="feedback_email" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 25px;">
-                    <textarea placeholder="Ваши пожелания или вопрос..."></textarea>
+                    <textarea id="feedback_message" placeholder="Ваши пожелания или вопрос..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Отправить заявку</button>
             </form>
@@ -383,6 +385,48 @@
             if (window.innerWidth <= 768) {
               e.preventDefault();
               this.parentElement.classList.toggle('dropdown-open');
+            }
+          });
+        }
+
+        // Обработка отправки формы обратной связи
+        var feedbackForm = document.getElementById('feedback-form');
+        if (feedbackForm) {
+          feedbackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('feedback_name').value.trim();
+            var phone = document.getElementById('feedback_phone').value.trim();
+            var email = document.getElementById('feedback_email').value.trim();
+            var message = document.getElementById('feedback_message').value.trim();
+            
+            var payload = {
+              name: name,
+              phone: phone,
+              email: email || null,
+              message: message || null
+            };
+            
+            try {
+              var response = await apiRequest('/api/feedbacks', {
+                method: 'POST',
+                body: JSON.stringify(payload)
+              });
+              
+              if (response.ok) {
+                showToast('Заявка успешно отправлена! Менеджер свяжется с вами в течение 15 минут.', 'success');
+                feedbackForm.reset();
+              } else {
+                var errData = await response.json();
+                var errMsg = errData.detail;
+                if (Array.isArray(errMsg)) {
+                  errMsg = errMsg.map(e => e.msg).join(', ');
+                }
+                showToast(errMsg || 'Не удалось отправить заявку.', 'error');
+              }
+            } catch (err) {
+              console.error(err);
+              showToast('Ошибка при отправке заявки. Убедитесь, что сервер запущен.', 'error');
             }
           });
         }
