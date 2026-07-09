@@ -773,7 +773,6 @@
     }
 
     window.addEventListener('hashchange', handleHash);
-    window.addEventListener('DOMContentLoaded', handleHash);
 
     // Сортировка карточек
     let originalCardsOrder = [];
@@ -784,6 +783,7 @@
         await window.carsDataPromise;
       }
       renderCatalogFromData();
+      handleHash();
       originalCardsOrder = Array.from(document.querySelectorAll('.car-card'));
       
       // Очистка классов анимации и задержки по окончании анимации
