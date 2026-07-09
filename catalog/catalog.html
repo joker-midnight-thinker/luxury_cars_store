@@ -61,8 +61,8 @@
         /* Сетка каталога (Grid) */
         .catalog-grid {
             display: grid;
-            /* Автоматически подстраивает колонки: минимум 320px, максимум 1 часть доступного пространства */
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 360px));
+            justify-content: center;
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -76,6 +76,9 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            width: 100%;
+            max-width: 360px;
+            justify-self: center;
             scroll-margin-top: 130px; /* Отступ под фиксированную шапку */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             
@@ -438,8 +441,13 @@
         }
         @media (max-width: 768px) {
             .catalog-grid {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: minmax(0, 360px) !important;
+                justify-content: center;
                 gap: 20px;
+            }
+
+            .car-card {
+                max-width: 360px;
             }
         }
         @media (max-width: 600px) {
@@ -473,7 +481,8 @@
                 padding: 10px 20px;
             }
             .catalog-grid {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: minmax(0, 360px) !important;
+                justify-content: center;
                 gap: 20px;
             }
         }
