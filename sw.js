@@ -1,4 +1,4 @@
-const CACHE_NAME = 'apex-motors-v1';
+const CACHE_NAME = 'redline-motors-v1';
 
 // Статические ресурсы для предкэширования при установке
 const PRECACHE_ASSETS = [
