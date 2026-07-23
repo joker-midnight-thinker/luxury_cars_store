@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог спорткаров</title>
     <link rel="icon" type="image/png" href="../assets/logo.png">
+
+    <!-- PWA Integration -->
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#0b0c10" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="../icon-192.png" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('../sw.js', { scope: '../' })
+            .then(reg => console.log('[PWA] Service Worker зарегистрирован!', reg))
+            .catch(err => console.log('[PWA] Ошибка регистрации SW:', err));
+        });
+      }
+    </script>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/index.css">
